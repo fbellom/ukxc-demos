@@ -1,0 +1,30 @@
+---
+version: '3.8'
+
+services:
+  audi:
+    image: cars:v1
+    ports:
+      - "8100:80"
+    networks:
+      - app-network    
+  
+  royal:
+    image: bikes:v1
+    ports:
+      - "8200:80"
+    networks:
+      - app-network     
+  
+
+  yatch:
+    image: yachts:v1
+    ports:
+      - "8300:80"
+    networks:
+      - app-network
+ 
+
+networks:
+  app-network:
+    driver: bridge  

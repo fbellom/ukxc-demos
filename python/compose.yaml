@@ -1,0 +1,16 @@
+---
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    networks:
+      - webapp-netw
+  redis:
+    image: "redis:alpine"
+    networks:
+      - webapp-netw
+
+networks:
+  webapp-netw:
+    driver: bridge  
